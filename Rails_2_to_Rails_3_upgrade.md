@@ -121,7 +121,9 @@ Upgrading from Rails 2 to Rails 3
     ------------
 
       class Profile < ActiveRecord::Base
+
         self.per_page = 3
+      
       end
 
       class ProfilesController < ApplicationController
