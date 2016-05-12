@@ -180,3 +180,36 @@ Upgrading from Rails 2 to Rails 3
 
         background-image: url('happy.gif');
 
+
+18. If you have 'error_messages_for' helper used in your forms then you need to remove them or rewrite
+    them as they are no longer available in Rails 3.
+    In case you want to rewrite them you can use the below way:
+
+    View
+    ---------------
+
+        <%= error_messages_for 'profile', "Following errors occurred:" %>
+
+    Helper
+    ---------------
+
+        def error_messages_for(obj, message)
+
+          object = instance_variable_get("@#{obj}")
+
+          if object.present? && object.errors.any?
+
+            error_messages = object.errors.full_messages.map {|msg| content_tag(:li, msg) }.join.html_safe
+            contents = ''
+            contents << content_tag(:p, message) unless message.blank?
+            contents << content_tag(:ul, error_messages)
+            content_tag(:div, contents.html_safe, :class => 'error')
+
+          end
+
+        end
+
+
+
+
+
