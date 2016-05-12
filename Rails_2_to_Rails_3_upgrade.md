@@ -91,9 +91,11 @@ Upgrading from Rails 2 to Rails 3
 
 13. Add the attributes of a model that should be accessible for mass assignment as shown below:
   
-    class Profile < ActiveRecord::Base
-      attr_accessible :name, :email, :age
-    end
+      class Profile < ActiveRecord::Base
+
+        attr_accessible :name, :email, :age
+      
+      end
 
     If you don't do this you will get 'cannot mass-assign protected attributes' error while saving the data from a form.
 
@@ -103,12 +105,16 @@ Upgrading from Rails 2 to Rails 3
 
     Rails 2
     ----------
+
       class Profile < ActiveRecord::Base
+
         def self.get_limited_profiles
+
           find(:all, :conditions => "inactive_flag <> 'Y'", 
                      :order => "created_at",
                      :page => {:size => 3, :current => 1})
         end
+
       end
 
     Rails 3 (If using will_paginate)
