@@ -1,5 +1,5 @@
 Upgrading from Rails 2 to Rails 3
-....................................................
+----------------------------------------------
 
 1. The best approach to avoid any confusion is build a fresh Rails 3 app and then keep on moving files
    from the old app to new app.
