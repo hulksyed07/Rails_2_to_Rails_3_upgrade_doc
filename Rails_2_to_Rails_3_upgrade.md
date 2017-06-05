@@ -209,6 +209,8 @@ Upgrading from Rails 2 to Rails 3
 
         end
 
+19. Replace "set_table_name 'my_table'" to "self.table_name = 'my_table'" in Models.
+20. Replace "set_primary_key 'profile_id'" to "self.primary_key = 'profile_id'" in Models.
 
 
 
