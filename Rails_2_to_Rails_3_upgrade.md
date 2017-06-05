@@ -11,7 +11,7 @@ Upgrading from Rails 2 to Rails 3
 2. Replace 'RAILS_ROOT' to Rails.root
 3. Replace 'RAILS_ENV' to Rails.env
 4. Replace <% form_for ... %> with <%= form_for %>. Without the equals sign the form will never get displayed on the page.
-5. Replace 'logger' with Rails.logger
+5. Replace 'RAILS_DEFAULT_LOGGER' with Rails.logger
 6. A sample replacement of routes as per Rails 3 syntax is shown below:
   
   Rails 2
